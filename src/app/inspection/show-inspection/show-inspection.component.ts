@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { InspectionApiService } from 'src/app/inspection-api.service';
 
 @Component({
   selector: 'app-show-inspection',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowInspectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: InspectionApiService) { }
 
   ngOnInit(): void {
   }
