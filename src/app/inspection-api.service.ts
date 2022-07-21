@@ -5,26 +5,26 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class InspectionApiService {
+export class  InspectionApiService {
 
   readonly inspectionAPIUrl = "https://localhost:7009/api";
 
   constructor(private http: HttpClient) { }
 
   getInspectionList(): Observable<any[]> {
-    return this.http.get<any>(this.inspectionAPIUrl + "/inspections");
+    return this.http.get<any>(this.inspectionAPIUrl + `/inspections`);
   }
 
   addInspection(data: any){
-    return this.http.post<any>(this.inspectionAPIUrl + "/inspections", data);
+    return this.http.post<any>(this.inspectionAPIUrl + `/inspections`, data);
   }
 
   updateInspection(id: number | string, data: any){
-    return this.http.put<any>(this.inspectionAPIUrl + "/inspections/" + id, data);
+    return this.http.put<any>(this.inspectionAPIUrl + `/inspections/` + id, data);
   } 
 
   deleteInspection(id: number | string) {
-    return this.http.delete<any>(this.inspectionAPIUrl + "/inspections/" + id);
+    return this.http.delete<any>(this.inspectionAPIUrl + `/inspections/` + id);
   }
 
   // Inspection Types
